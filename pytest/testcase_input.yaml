@@ -1,0 +1,6 @@
+--- 
+tests: 
+
+  -
+    test_case: pod.test_pod_status
+    inputs:  {"name": "pod1"}

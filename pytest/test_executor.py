@@ -3,7 +3,6 @@ import os
 import sys
 import yaml
 
-sys.path.append('/home/ubuntu/k8s_resource_tracking/acc-pyutils')
 from acc_pyutils import exceptions as kctlexc, logger, utils
 
 LOG = logger.get_logger(__name__)

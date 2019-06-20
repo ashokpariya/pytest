@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/ubuntu/k8s_resource_tracking/acc-pyutils')
 from acc_pyutils.api import KubeAPI
 from acc_pyutils import exceptions as kctlexc
 
