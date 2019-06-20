@@ -1,0 +1,41 @@
+--- 
+tests: 
+
+  -
+    test_case: pod.check_pod_status
+    inputs:  { 
+               'name':     #pod name
+               'namespace':  #namespace name
+             }
+
+
+  -
+    test_case: replicaset.check_replicaset_status
+    inputs:  { 
+               'name':     #replicaset name
+               'namespace':  #namespace name
+             }
+    
+
+  -
+    test_case: deployment.check_deployment_status
+    inputs:  { 
+               'name':     #deployment name
+               'namespace':  #namespace name
+             }
+    
+
+   -
+    test_case: service.check_service_status
+    inputs:  { 
+               'name':     #service name
+               'namespace':  #namespace name
+             }
+    
+
+    -
+    test_case: configmap.check_configmap_status
+    inputs:  { 
+               'name':     #configmap name
+               'namespace':  #namespace name
+             }     
