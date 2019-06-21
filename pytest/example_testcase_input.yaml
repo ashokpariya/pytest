@@ -1,0 +1,14 @@
+--- 
+tests: 
+
+  -
+    test_case: pod.test_pod_status
+    inputs:  {"name": "pod1"}
+
+  -
+    test_case: replicaset.test_replicaset_status
+    inputs:  {"name": "nginx-deployment-6dd86d77d"}
+
+  -
+    test_case: service.test_service_status
+    inputs:  {"name": "nginx"}
