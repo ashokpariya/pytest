@@ -59,7 +59,8 @@ class TestDeployment:
         Verify source of packet on server interface.
 
         :param: hostIP
-        :return:
+        :return: True/False: based on packet from client pod
+                 received on server interface or not
         """
         host_interface = 'ens5'
         server_port = 80
