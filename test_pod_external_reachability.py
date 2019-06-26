@@ -52,15 +52,15 @@ def check_pods_external_reachability():
         time.sleep(POD_CREATION_WAITING_TIME)
         # get pods info
         pod_info = KAPI.get('pod', 'client-pod')
-        #verify readiness of pods
-        msg = ("pod {} status is {}".format(pod_info[
-            'metadata']['name'], pod_info['status']['phase']))
-        LOG.debug(msg)
-        assert pod_info['status']['phase'] == "Running"
-
-        pod_ip = pod_info['status']['podIP']
-        host_ip = pod_info['status']['hostIP']
-        assert pod_ip != None
+        if 'status' in pod_info:
+            #verify readiness of pods
+            assert pod_info['status'].get('phase') == "Running"
+            pod_ip = pod_info['status'].get('podIP')
+            hostIP = pod_info['status'].get('hostIP')
+            assert pod_ip != None
+        else:
+            LOG.error("unable to get client pod info")
+            assert 0
 
         #prepare commnad to be executed on pod1
         cmd = 'curl --connect-timeout 1 -s ' + \
