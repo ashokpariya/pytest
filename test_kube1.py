@@ -2,9 +2,7 @@ import pingparsing
 import pytest
 import subprocess
 import time
-import sys
 
-sys.path.append('/home/ubuntu/wrapper_latest/acc-pyutils')
 from acc_pyutils.api import KubeAPI
 from multiprocessing.pool import ThreadPool
 
@@ -27,7 +25,7 @@ class TestDeployment:
             '../acc_pyutils/tests/client-pod.yaml')
         assert status is True
 
-        # get clinet pod info
+        # get client pod info
         pod_info = kapi.get('pod', 'client-pod')
         host_ip = pod_info.get('hostIP')
         cmd = 'curl --connect-timeout 1 -s ' + \
