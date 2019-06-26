@@ -3,7 +3,6 @@ import pingparsing
 import subprocess
 import sys
 import time
-sys.path.append('/home/ubuntu/k8s_resource_tracking/acc-pyutils')
 from acc_pyutils.api import KubeAPI
 from acc_pyutils import exceptions as kctlexc, logger
 from multiprocessing.pool import ThreadPool
